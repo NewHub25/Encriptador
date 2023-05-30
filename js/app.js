@@ -20,26 +20,32 @@ const encryptKeys = [
   ["u", "ufat"],
 ];
 function encrypt() {
-  const input = document.getElementById("input").value;
+  const input = getTextarea(this).value;
   document.getElementById("output").value = input.replace(
     RegExp(encryptKeys.map((m) => m[0]).join("|"), "g"),
     function (match, offset, string) {
       return encryptKeys.find((f) => f[0] === match)[1];
     }
   );
+  closeModal();
 }
 function decrypt() {
-  const input = document.getElementById("input").value;
+  const input = getTextarea(this).value;
   document.getElementById("output").value = input.replace(
     RegExp(encryptKeys.map((m) => m[1]).join("|"), "g"),
     function (match, offset, string) {
       return encryptKeys.find((f) => f[1] === match)[0];
     }
   );
+  closeModal();
+}
+function getTextarea(enviroment) {
+  return enviroment.parentElement.closest("section").querySelector("textarea");
 }
 function copyText() {
+  const textarea = getTextarea(this);
   navigator.clipboard
-    .writeText(document.getElementById("output").value)
+    .writeText(textarea.value)
     .then(() => {
       console.log("Texto copiado al portapapeles");
     })
@@ -47,3 +53,33 @@ function copyText() {
       console.error("Error al copiar el texto: ", err);
     });
 }
+function closeModal() {
+  document.querySelector(".modal").classList.toggle("hide");
+}
+function pasteToTextarea() {
+  const textarea = getTextarea(this);
+  navigator.clipboard
+    .readText()
+    .then(function (text) {
+      textarea.value = text;
+    })
+    .catch(function (error) {
+      console.error("Error al leer el portapapeles: ", error);
+    });
+}
+function deleteTextarea() {
+  const textarea = getTextarea(this);
+  textarea.value = "";
+}
+document
+  .querySelectorAll('[data-copy=""]')
+  .forEach((f) => f.addEventListener("click", copyText));
+document.querySelector('[data-close=""]').addEventListener("click", closeModal);
+document.querySelector('[data-decrypt=""]').addEventListener("click", decrypt);
+document.querySelector('[data-encrypt=""]').addEventListener("click", encrypt);
+document
+  .querySelector('[data-paste=""]')
+  .addEventListener("click", pasteToTextarea);
+document
+  .querySelector('[data-delete=""]')
+  .addEventListener("click", deleteTextarea);

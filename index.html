@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de texto</title>
-    <link rel="shortcut icon" href="./imgs/icono_alura.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./imgs/icono_alura.ico"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./js/app.js"></script>
@@ -17,23 +21,32 @@
       </header>
       <section class="principal">
         <article class="principal-article">
-          <label for="input">Ingrese el texto a encriptar o desencriptar:</label>
-          <textarea id="input"></textarea>
+          <label for="input"
+            >Ingrese el texto a encriptar o desencriptar:</label
+          >
+          <textarea></textarea>
           <div class="buttons">
-            <button>Desencriptar</button>
-            <button>Encriptar</button>
-            <button>Copiar</button>
+            <button data-decrypt="">Desencriptar</button>
+            <button data-encrypt="">Encriptar</button>
+            <button data-copy="">Copiar</button>
+            <button data-paste="">Pegar</button>
+            <button data-delete="">Borrar</button>
           </div>
         </article>
         <article class="principal-article">
-          <img src="./imgs/man.png" alt="">
+          <img src="./imgs/man.png" alt="" />
         </article>
       </section>
-      <section class="modal">
+    </main>
+    <section class="modal hide">
+      <article class="container-modal">
         <label for="output">Texto final:</label>
         <textarea id="output"></textarea>
-        <button type="button">Copiar</button>
-      </section>
-    </main>
+        <div class="buttons">
+          <button type="button" data-copy="">Copiar</button>
+          <button type="button" data-close="">Cerrar</button>
+        </div>
+      </article>
+    </section>
   </body>
 </html>
