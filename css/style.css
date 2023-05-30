@@ -24,6 +24,10 @@ body{
   flex-direction: column;
   justify-content: space-between;
 }
+header.principal h1{
+  text-align: center;
+  font-size: 2rem;
+}
 textarea,
 input[type="text"],
 button {
