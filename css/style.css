@@ -1,10 +1,28 @@
-.container {
-  width: 50vw;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f0f0f0;
+:root {
+  --color-dark: #5b6aeb;
+  --scheme-dark: #07060f;
 }
-
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+body{
+  background-color: var(--scheme-dark);
+  color: var(--color-dark);
+  min-height: 100vh;
+}
+.modal{
+  display: none;
+}
+.container {
+  width: 80vw;
+  width: 80dvw;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 textarea,
 input[type="text"],
 button {
@@ -15,6 +33,7 @@ button {
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  outline: none;
 }
 
 textarea {
@@ -32,13 +51,12 @@ button:hover {
   background-color: #0062cc;
 }
 @media screen and (max-width: 768px) {
-    button {
-      font-size: 16px;
-      padding: 8px 16px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
+  button {
+    font-size: 16px;
+    padding: 8px 16px;
   }
-  
+
+  h1 {
+    font-size: 24px;
+  }
+}

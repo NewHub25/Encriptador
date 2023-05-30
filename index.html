@@ -5,19 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de texto</title>
+    <link rel="shortcut icon" href="./imgs/icono_alura.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./js/app.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Encriptador de texto Alura</h1>
-      <label for="input">Ingrese el texto a encriptar o desencriptar:</label>
-      <textarea id="input"></textarea>
-      <button onclick="encrypt()">Encriptar</button>
-      <button onclick="decrypt()">Desencriptar</button>
-      <label for="output">Texto final:</label>
-      <textarea id="output"></textarea>
-      <button type="button" onclick="copyText()">Copiar</button>
-    </div>
+    <main class="container">
+      <header class="principal">
+        <h1>Encriptador de texto Alura</h1>
+      </header>
+      <section class="principal">
+        <article class="user_input">
+          <label for="input">Ingrese el texto a encriptar o desencriptar:</label>
+          <button>Desencriptar</button>
+          <button>Encriptar</button>
+          <textarea id="input"></textarea>
+          <button type="button">Copiar</button>
+        </article>
+        <article class="user_input">
+          <img src="./imgs/man.png" alt="">
+        </article>
+      </section>
+      <section class="modal">
+        <label for="output">Texto final:</label>
+        <textarea id="output"></textarea>
+        <button type="button">Copiar</button>
+      </section>
+    </main>
   </body>
 </html>
