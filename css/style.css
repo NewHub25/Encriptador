@@ -4,12 +4,13 @@
 }
 * {
   box-sizing: border-box;
+  background-color: #00cc181a;
   outline: none;
 }
 body {
   background-color: var(--scheme-dark);
   color: var(--color-dark);
-  min-height: 100vh;
+  height: 100vh;
 }
 .modal {
   display: none;
@@ -51,18 +52,15 @@ button {
   font-size: 16px;
   outline: none;
 }
-
 textarea {
   height: 120px;
 }
-
 button {
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 button:hover {
   background-color: #0062cc;
 }
