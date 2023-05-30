@@ -11,28 +11,43 @@ body {
   background-color: var(--scheme-dark);
   color: var(--color-dark);
   height: 100vh;
+  overflow: hidden;
 }
 .modal {
   display: none;
 }
 .container {
-  width: 80vw;
-  width: 80dvw;
+  width: 90vw;
+  width: 90dvw;
   margin: 0 auto;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+  height: 100%;
 }
 section.principal {
   display: flex;
   justify-content: space-around;
   gap: 2rem;
+  height: 60%;
 }
 .principal-article {
   padding: 1rem;
   outline: 1px solid #f0f;
   width: 70%;
+  gap: 1rem;
+}
+.principal-article:has(:not(img)) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.principal-article .buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
 }
 .principal-article:has(img) {
   width: auto;
@@ -53,7 +68,7 @@ button {
   outline: none;
 }
 textarea {
-  height: 120px;
+  flex-grow: 1;
 }
 button {
   background-color: #007bff;
@@ -63,6 +78,20 @@ button {
 }
 button:hover {
   background-color: #0062cc;
+}
+@media screen and (max-width: 1000px) {
+  .principal-article {
+    width: 100%;
+  }
+  .principal-article:has(img) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    margin: auto;
+    z-index: -1;
+    opacity: 0.5;
+  }
 }
 @media screen and (max-width: 768px) {
   button {
