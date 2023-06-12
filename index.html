@@ -5,39 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de texto</title>
-    <link
-      rel="shortcut icon"
-      href="./imgs/icono_alura.ico"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./imgs/icono_alura.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/aside.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
     <script defer src="./js/app.js" type="module"></script>
     <script defer src="./js/typing.js" type="module"></script>
   </head>
   <body>
     <main class="container">
-      <header class="principal">
-        <h1>Encriptador de texto Alura</h1>
+      <header class="header">
+        <h1>Encriptador de texto</h1>
       </header>
       <section class="principal">
         <article class="principal-article">
-          <label for="input"
-            >Ingrese el texto a encriptar o desencriptar:</label
-          >
+          <label for="input">Ingrese el texto a encriptar o desencriptar:</label>
           <textarea></textarea>
-          <div class="buttons">
-            <button data-decrypt="">Desencriptar</button>
-            <button data-encrypt="">Encriptar</button>
-            <button data-copy="">Copiar</button>
-            <button data-paste="">Pegar</button>
-            <button data-delete="">Borrar</button>
-          </div>
+          <ul class="principal-article-buttons">
+            <li>
+              <button data-decrypt="">Desencriptar</button>
+            </li>
+            <li>
+              <button data-encrypt="">Encriptar</button>
+            </li>
+            <li>
+              <button data-copy="">Copiar</button>
+            </li>
+            <li>
+              <button data-paste="">Pegar</button>
+            </li>
+            <li>
+              <button data-delete="">Borrar</button>
+            </li>
+          </ul>
         </article>
         <article class="principal-article">
           <img src="./imgs/man.png" alt="" />
         </article>
       </section>
+      <aside></aside>
+      <footer class="footer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, aliquam exercitationem. Quisquam blanditiis saepe esse quibusdam molestias! Eius fugit perspiciatis, quas unde voluptatibus magni molestiae asperiores odio cum labore ea illum dolores autem molestias at quod? Fugit, soluta eum. Laborum in sit et, animi qui facilis perspiciatis voluptas soluta repellendus.</p>
+      </footer>
     </main>
     <section class="modal hide">
       <article class="container-modal">

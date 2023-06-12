@@ -1,0 +1,30 @@
+.modal.hide {
+    display: none;
+  }
+  .modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #333a;
+    width: 100vw;
+    width: 100dvw;
+    height: 100dvh;
+    height: 100dvh;
+    z-index: 100;
+  }
+  .modal .container-modal {
+    width: 50vw;
+    width: 50dvw;
+    height: 50vh;
+    height: 50dvh;
+    margin: 10rem auto;
+    background-color: var(--scheme-dark);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal .container-modal label {
+    font-size: 1.5rem;
+  }
+  
