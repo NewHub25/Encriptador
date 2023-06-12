@@ -4,13 +4,11 @@
 }
 * {
   box-sizing: border-box;
-  /* background-color: #00cc181a; */
-  outline: none;
 }
 body {
   background-color: var(--scheme-dark);
   color: var(--color-dark);
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 .modal.hide {

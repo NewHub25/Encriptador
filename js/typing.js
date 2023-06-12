@@ -1,6 +1,8 @@
 import Typed from "https://cdn.skypack.dev/typed.js@2.0.15";
-const selector = 'body'
-const typed = new Typed(selector, {
+// Necesita estar dentro de un SPAN
+
+const selector = "body";
+const options = {
   strings: [
     "desarrollador web",
     "diseñador de páginas",
@@ -18,4 +20,5 @@ const typed = new Typed(selector, {
   showCursor: true, //Mostrar cursor palpitante
   cursorChar: "|",
   contentType: "html", //html o null para texto sin formato
-});
+};
+// const typed = new Typed(selector, options);
