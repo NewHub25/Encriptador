@@ -21,6 +21,7 @@ body {
   width: 100dvw;
   height: 100vh;
   height: 100dvh;
+  box-sizing: border-box;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -120,7 +121,7 @@ textarea::placeholder {
   animation-name: bounce;
   animation-duration: 1s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .principal-article img {
     display: none;
   }
