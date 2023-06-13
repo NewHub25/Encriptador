@@ -5,6 +5,7 @@
   width: 100dvw;
   height: 100vh;
   height: 100dvh;
+  pointer-events: none;
 }
 /* La etiqueta UL debe estar siempre dentro de un elemento bloque */
 .animated-background {
