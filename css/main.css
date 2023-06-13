@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Caladea:wght@700&family=Karla:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caladea:wght@700&family=Karla:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;700&display=swap");
 
 :root {
   --color60: #eaa405;
@@ -31,7 +31,7 @@ body {
   z-index: 10;
 }
 .header {
-  flex: 1 2 2rem;
+  flex: 1 3 2rem;
 }
 .header h1 {
   font-size: 2rem;
@@ -45,15 +45,14 @@ body {
   display: flex;
   justify-content: center;
 }
-.footer {
+/* .footer {
   flex: 1 1 3rem;
-}
+} */
 .principal-article:nth-child(1) {
   width: 50%;
   flex: 2 1 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
 }
 .principal-article:nth-child(2) {
@@ -70,6 +69,7 @@ body {
 }
 .principal-article .texto-container label {
   text-align: right;
+  font-size: 1.5rem;
   font-style: italic;
 }
 .principal-article .texto-container textarea {
@@ -79,12 +79,12 @@ body {
   outline: none;
 }
 .principal-article .principal-article-buttons {
-  flex: 1 2 auto;
+  margin: 1rem;
   display: flex;
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
-  width: 500px;
+  width: 100%;
   gap: 0.5rem;
 }
 .principal-article .principal-article-buttons button {
@@ -93,7 +93,7 @@ body {
 .principal-article img {
   width: 70%;
 }
-.principal-article img:hover{
+.principal-article img:hover {
   animation-name: fadeIn;
   animation-duration: 1s;
 }
@@ -121,8 +121,27 @@ textarea::placeholder {
   animation-name: bounce;
   animation-duration: 1s;
 }
-@media screen and (max-width: 769px) {
-  .principal-article img {
+
+@media screen and (max-width: 768px) {
+  .principal-article:nth-child(2) {
     display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .header{
+    flex: .5 3 2rem;
+  }
+  .principal-article .texto-container label {
+    font-size: 1.2rem;
+  }
+  .principal-article .texto-container textarea{
+    height: 90%;
+  }
+  .principal-article .principal-article-buttons{
+    align-content: center;
+  }
+  button{
+    font-size: 1rem;
+    font-weight: 700;
   }
 }

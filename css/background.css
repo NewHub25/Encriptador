@@ -1,6 +1,5 @@
 .animated-container {
   position: absolute;
-  z-index: 1;
   width: 100vw;
   width: 100dvw;
   height: 100vh;
