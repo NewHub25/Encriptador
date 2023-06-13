@@ -21,61 +21,82 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   position: relative;
   z-index: 10;
 }
+.container > * {
+  /* outline: 1px solid #f0f; */
+}
 .header {
   flex: 1 2 2rem;
-  outline: 1px solid;
+}
+header.header h1 {
+  text-align: center;
+  font-size: 2rem;
 }
 .principal {
   flex: 5 1 10rem;
+  min-width: 70vw;
+  min-width: 70dvw;
   display: flex;
-  justify-content: space-around;
-  gap: 2rem;
+  justify-content: space-evenly;
 }
 .footer {
   flex: 1 1 3rem;
 }
-.principal-article {
-  padding: 1rem;
-  width: 70%;
-  gap: 1rem;
+.principal > * {
+  /* outline: 1px solid #ff0; */
 }
-.principal-article:has(:not(img)) {
+.principal-article:nth-child(1) {
+  width: 70%;
+  flex: 2 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  /* outline: 10px solid #00f; */
+  align-items: center;
 }
-header.principal h1 {
-  text-align: center;
-  font-size: 2rem;
+.principal-article:nth-child(2) {
+  flex: 0 1 auto;
 }
-.buttons {
+.principal-article .texto-container {
+  flex: 3 0 auto;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* padding: 2rem; */
+  /* outline: 1px solid #00f; */
   gap: 1rem;
+  width: 80%;
 }
-.principal-article:has(img) {
-  width: auto;
+.principal-article .texto-container textarea {
+  height: 70%;
+  width: 100%;
+  resize: none;
+  outline: none;
+}
+.principal-article .principal-article-buttons {
+  flex: 1 2 auto;
+  /* outline: 1px solid #00f; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
 }
 .principal-article img {
   width: 100%;
 }
 textarea,
-input[type="text"],
 button {
+  box-sizing: border-box;
   display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 0.5rem;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  outline: none;
-}
-textarea {
-  flex-grow: 1;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  height: 40%;
 }
 /* Botones */
 button {
@@ -87,27 +108,8 @@ button {
 button:hover {
   background-color: #0062cc;
 }
-@media screen and (max-width: 1000px) {
-  .principal-article {
-    width: 100%;
-  }
-  .principal-article:has(img) {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 40%;
-    margin: auto;
-    z-index: -1;
-    opacity: 0.5;
-  }
-}
 @media screen and (max-width: 768px) {
-  button {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-
-  h1 {
-    font-size: 24px;
+  .principal-article img {
+    display: none;
   }
 }

@@ -12,12 +12,15 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/modal.css" />
     <link rel="stylesheet" href="./css/background.css">
-    <script defer src="./js/app.js" type="module"></script>
+    <script defer src="./js/main.js" type="module"></script>
     <script defer src="./js/typing.js" type="module"></script>
   </head>
   <body>
     <div class="animated-container">
       <ul id="animatedBackground" class="animated-background">
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
     </div>
     <main class="container">
@@ -26,8 +29,10 @@
       </header>
       <section class="principal">
         <article class="principal-article">
-          <label for="input">Ingrese el texto a encriptar o desencriptar:</label>
-          <textarea></textarea>
+          <div class="texto-container">
+            <label for="texto">Ingrese el texto a encriptar o desencriptar:</label>
+            <textarea id="texto"></textarea>
+          </div>
           <ul class="principal-article-buttons">
             <li>
               <button data-decrypt="">Desencriptar</button>
