@@ -12,27 +12,25 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/modal.css" />
     <link rel="stylesheet" href="./css/background.css">
+    <script defer src="./js/background.js" type="module"></script>
     <script defer src="./js/main.js" type="module"></script>
     <script defer src="./js/typing.js" type="module"></script>
-    <script defer src="./js/background.js" type="module"></script>
+    <script defer src="./js/animate.js" type="module"></script>
   </head>
   <body>
     <div class="animated-container">
       <ul id="animatedBackground" class="animated-background">
-        <li></li>
-        <li></li>
-        <li></li>
       </ul>
     </div>
     <main class="container">
       <header class="header">
-        <h1>Encriptador de texto</h1>
+        <h1><u>Encriptador de texto</u></h1>
       </header>
       <section class="principal">
         <article class="principal-article">
           <div class="texto-container">
-            <label for="texto">Ingrese el texto a encriptar o desencriptar:</label>
-            <textarea id="texto"></textarea>
+            <label for="texto"><span class="typed-label"></span></label>
+            <textarea id="texto" placeholder="Escribe aquí"></textarea>
           </div>
           <ul class="principal-article-buttons">
             <li>
@@ -53,7 +51,7 @@
           </ul>
         </article>
         <article class="principal-article">
-          <img src="./imgs/man.png" alt="" />
+          <img src="./imgs/detective_penguin.svg" alt="" />
         </article>
       </section>
       <aside></aside>

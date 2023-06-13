@@ -1,16 +1,20 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css);
-/* animate__animated animate__bounce */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Caladea:wght@700&family=Karla:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:wght@400;700&display=swap');
+
 :root {
-  --scheme60: #eaa405;
-  --scheme30: #d29ae3;
-  --scheme10: #84e3be;
+  --color60: #eaa405;
+  --color30: #d29ae3;
+  --color10: #71f7c4;
+  --textButton: #ff6140;
 }
 body {
-  background-color: var(--scheme60);
-  background-image: linear-gradient(to bottom, var(--scheme60) 70%, gold, #eea);
+  background-color: var(--color60);
+  background-image: linear-gradient(to bottom, var(--color60) 70%, gold, #eea);
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
 }
 .container {
   width: 100vw;
@@ -25,40 +29,34 @@ body {
   position: relative;
   z-index: 10;
 }
-.container > * {
-  /* outline: 1px solid #f0f; */
-}
 .header {
   flex: 1 2 2rem;
 }
-header.header h1 {
-  text-align: center;
+.header h1 {
   font-size: 2rem;
+  font-family: "Caladea", serif;
+  font-weight: 700;
 }
 .principal {
   flex: 5 1 10rem;
   min-width: 70vw;
   min-width: 70dvw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .footer {
   flex: 1 1 3rem;
 }
-.principal > * {
-  /* outline: 1px solid #ff0; */
-}
 .principal-article:nth-child(1) {
-  width: 70%;
-  flex: 2 0 auto;
+  width: 50%;
+  flex: 2 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* outline: 10px solid #00f; */
   align-items: center;
 }
 .principal-article:nth-child(2) {
-  flex: 0 1 auto;
+  flex: 1 3 100px;
 }
 .principal-article .texto-container {
   flex: 3 0 auto;
@@ -66,10 +64,12 @@ header.header h1 {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* padding: 2rem; */
-  /* outline: 1px solid #00f; */
   gap: 1rem;
   width: 80%;
+}
+.principal-article .texto-container label {
+  text-align: right;
+  font-style: italic;
 }
 .principal-article .texto-container textarea {
   height: 70%;
@@ -79,14 +79,22 @@ header.header h1 {
 }
 .principal-article .principal-article-buttons {
   flex: 1 2 auto;
-  /* outline: 1px solid #00f; */
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  width: 100%;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 500px;
+  gap: 0.5rem;
+}
+.principal-article .principal-article-buttons button {
+  width: 125px;
 }
 .principal-article img {
-  width: 100%;
+  width: 70%;
+}
+.principal-article img:hover{
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }
 textarea,
 button {
@@ -96,17 +104,21 @@ button {
   border: none;
   border-radius: 0.5rem;
   font-size: 1.2rem;
-  height: 40%;
 }
-/* Botones */
 button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--color10);
+  color: var(--textButton);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: filter 0.3s ease;
 }
-button:hover {
-  background-color: #0062cc;
+textarea::placeholder {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+.principal-article-buttons li:hover button {
+  filter: brightness(130%);
+  animation-name: bounce;
+  animation-duration: 1s;
 }
 @media screen and (max-width: 768px) {
   .principal-article img {
