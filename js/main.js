@@ -54,7 +54,7 @@ function copyText() {
     });
 }
 function closeModal() {
-  document.querySelector(".modal").classList.toggle("hide");
+  document.querySelector(".container-modal").classList.toggle("hidden");
 }
 function pasteToTextarea() {
   const textarea = getTextarea(this);
@@ -83,9 +83,3 @@ document
 document
   .querySelector('[data-delete=""]')
   .addEventListener("click", deleteTextarea);
-
-function setViewport(selectorCSS) {
-  const { innerWidth, innerHeight } = window;
-  document.querySelector(selectorCSS).style.width = innerWidth + "px";
-  document.querySelector(selectorCSS).style.height = innerHeight + "px";
-}
