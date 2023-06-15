@@ -8,19 +8,25 @@
     <link rel="shortcut icon" href="./imgs/shield-lock-filled.png" type="image/png" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/background.css" />
     <link rel="stylesheet" href="./css/aside.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/modal.css" />
-    <link rel="stylesheet" href="./css/background.css" />
-    <script defer src="./js/background.js"></script>
-    <script defer src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/nav.css">
     <script defer src="./js/typing.js" type="module"></script>
-    <script defer src="./js/animate.js"></script>
+    <script defer src="./js/main.js" type="module"></script>
+    <script defer src="./js/background.js" type="module"></script>
+    <script defer src="./js/animate.js" type="module"></script>
   </head>
   <body>
     <div class="animated-container">
       <ul id="animatedBackground" class="animated-background"></ul>
     </div>
+    <nav id="pop-mesagge">
+      <img src="./imgs/alarm-clock.png" alt="Alarma">
+      <p>¡Este es una aviso!</p>
+      <i class="fa-solid fa-circle-xmark"></i>
+    </nav>
     <main class="container">
       <header class="header">
         <h1><u>Encriptador de texto</u></h1>
@@ -183,23 +189,11 @@
       </svg>
       <article class="modal">
         <div class="content-modal">
-          <label for="output">Texto final:</label>
-          <textarea id="output"></textarea>
+          <label for="output">¡Cópialo, pégalo y compártelo!</label>
+          <textarea id="output" readonly></textarea>
           <ul class="modal-buttons">
             <li>
-              <button data-decrypt="">Desencriptar</button>
-            </li>
-            <li>
-              <button data-encrypt="">Encriptar</button>
-            </li>
-            <li>
               <button data-copy="">Copiar</button>
-            </li>
-            <li>
-              <button data-paste="">Pegar</button>
-            </li>
-            <li>
-              <button data-delete="">Borrar</button>
             </li>
             <li>
               <button type="button" data-close="">Cerrar</button>

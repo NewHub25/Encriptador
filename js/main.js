@@ -11,7 +11,6 @@
 -`La letra "o" es convertida para "ober"`
 -`La letra "u" es convertida para "ufat"`
  */
-
 const encryptKeys = [
   ["a", "ai"],
   ["e", "enter"],
@@ -28,6 +27,7 @@ function encrypt() {
     }
   );
   closeModal();
+  setTypeAnimation(true);
 }
 function decrypt() {
   const input = getTextarea(this).value;
@@ -38,9 +38,10 @@ function decrypt() {
     }
   );
   closeModal();
+  setTypeAnimation(false);
 }
 function getTextarea(enviroment) {
-  return enviroment.parentElement.closest("section").querySelector("textarea");
+  return enviroment.parentElement.closest("article").querySelector("textarea");
 }
 function copyText() {
   const textarea = getTextarea(this);
@@ -53,8 +54,10 @@ function copyText() {
       console.error("Error al copiar el texto: ", err);
     });
 }
-function closeModal() {
-  document.querySelector(".container-modal").classList.toggle("hidden");
+function closeModal(boolean) {
+  document
+    .querySelector(".container-modal")
+    .classList.toggle("hidden", boolean);
 }
 function pasteToTextarea() {
   const textarea = getTextarea(this);
@@ -71,15 +74,27 @@ function deleteTextarea() {
   const textarea = getTextarea(this);
   textarea.value = "";
 }
+document.querySelector("[data-close]").addEventListener("click", closeModal);
+document.querySelector("[data-decrypt]").addEventListener("click", decrypt);
+document.querySelector("[data-encrypt]").addEventListener("click", encrypt);
 document
-  .querySelectorAll('[data-copy=""]')
-  .forEach((f) => f.addEventListener("click", copyText));
-document.querySelector('[data-close=""]').addEventListener("click", closeModal);
-document.querySelector('[data-decrypt=""]').addEventListener("click", decrypt);
-document.querySelector('[data-encrypt=""]').addEventListener("click", encrypt);
-document
-  .querySelector('[data-paste=""]')
+  .querySelector("[data-paste]")
   .addEventListener("click", pasteToTextarea);
 document
-  .querySelector('[data-delete=""]')
+  .querySelector("[data-delete]")
   .addEventListener("click", deleteTextarea);
+document
+  .querySelectorAll("[data-copy]")
+  .forEach((f) => f.addEventListener("click", copyText));
+
+addEventListener("keydown", (e) => {
+  if (e.code === "Escape") {
+    closeModal(true);
+  }
+});
+
+document
+  .querySelector('#pop-mesagge i[class*="xmark"]')
+  .addEventListener("click", (e) => {
+    e.target.parentElement.classList.add("animate__animated", "animate__hinge");
+  });

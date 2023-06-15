@@ -1,4 +1,5 @@
 @import url(./background-modal.css);
+
 .container-modal {
   position: absolute;
   left: 0;
@@ -39,27 +40,35 @@ svg {
 }
 .container-modal .modal .content-modal {
   width: 90%;
-  height: 60%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   border-radius: 1rem;
-  outline: 1rem solid #ff0;
 }
 .content-modal label {
   font-size: 1.5rem;
+  animation-name: fadeInLeftBig;
+  animation-duration: 2s;
 }
-.container-modal textarea {
-  height: 200px;
+.content-modal textarea {
+  height: 70%;
+  width: min(90%, 600px);
+  background: #222;
+  color: #eee;
 }
-.container-modal .modal-buttons {
-  outline: 1px solid #0090de;
+.content-modal .modal-buttons {
   display: flex;
+  width: min(90%, 600px);
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.content-modal .modal-buttons li {
+  flex: 1 1 125px;
+}
+.content-modal .modal-buttons li button {
   width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: .5rem;
 }
 @keyframes showModal {
   to {

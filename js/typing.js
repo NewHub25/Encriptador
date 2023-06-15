@@ -1,8 +1,8 @@
 import Typed from "https://cdn.skypack.dev/typed.js@2.0.15";
 // Necesita estar dentro de un SPAN
 
-const selector = ".typed-label";
-const options = {
+const selector_1 = ".typed-label";
+const options_1 = {
   strings: [
     "Inicia el decifrado. Escribe el código secreto y descubre el significado. También puedes codificarlo y crear tu propia versión cifrada.",
   ].map((item) => `<span>${item}</span>`),
@@ -17,4 +17,4 @@ const options = {
   cursorChar: "|",
   contentType: "html", //html o null para texto sin formato
 };
-const typed = new Typed(selector, options);
+const typed_1 = new Typed(selector_1, options_1);

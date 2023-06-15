@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
 :root {
   --color60: #eaa405;
   --color30: #d29ae3;
   --color10: #71f7c4;
   --textButton: #ff6140;
+  --amarillo: #ffdb87;
 }
 body {
   background-color: var(--color60);
   background-image: radial-gradient(
     circle at top center,
     var(--color60) 15px,
-    #ff8060
+    var(--color30)
   );
   height: 100vh;
   height: 100dvh;
@@ -79,6 +82,9 @@ body {
   resize: none;
   outline: none;
 }
+.principal-article .texto-container textarea:focus {
+  opacity: 1;
+}
 .principal-article .principal-article-buttons {
   margin: 1rem;
   display: flex;
@@ -102,13 +108,22 @@ textarea,
 button {
   box-sizing: border-box;
   display: block;
-  padding: 0.5rem;
+  padding: 0.8rem 0.6rem;
   border: none;
   border-radius: 0.5rem;
   font-size: 1.2rem;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+textarea {
+  opacity: 0.5;
 }
 button {
   background-color: var(--color10);
+  background-image: radial-gradient(
+    circle at left -90%,
+    var(--color10) 60%,
+    var(--color30)
+  );
   color: var(--textButton);
   cursor: pointer;
   transition: filter 0.3s ease;
@@ -119,7 +134,7 @@ textarea::placeholder {
 }
 li:hover button {
   filter: brightness(130%);
-  animation-name: bounce;
+  animation-name: rubberBand;
   animation-duration: 1s;
 }
 

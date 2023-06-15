@@ -1,0 +1,36 @@
+#pop-mesagge {
+  height: 8vh;
+  aspect-ratio: 10/2;
+  background: #333a;
+  position: absolute;
+  bottom: 2vh;
+  left: 5vw;
+  z-index: 100;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  display: flex;
+  /* display: none; */
+  /* animation-name: hinge; */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform-origin: left;
+}
+#pop-mesagge img {
+  flex: 0 0 auto;
+  height: 100%;
+  animation-name: wobble;
+  animation-duration: 0.5s;
+  animation-iteration-count: 3;
+}
+#pop-mesagge p {
+  flex: 1 1 auto;
+  color: #eee;
+  text-align: center;
+}
+#pop-mesagge i[class*="xmark"] {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  color: #eee;
+}
