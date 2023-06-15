@@ -161,3 +161,6 @@ li:hover button {
     font-weight: 700;
   }
 }
+.hidden{
+  display: none;
+}

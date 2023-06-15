@@ -15,9 +15,6 @@
   animation-fill-mode: forwards;
   opacity: 0;
 }
-.container-modal.hidden {
-  display: none;
-}
 svg {
   background: #eee;
   width: 100%;

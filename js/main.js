@@ -103,10 +103,14 @@ document
   .querySelector('#pop-mesagge i[class*="xmark"]')
   .addEventListener("click", (e) => {
     e.target.parentElement.classList.add("animate__animated", "animate__hinge");
+    setTimeout(()=>{
+      e.target.parentElement.classList.add("hidden");
+    }, 1000);
   });
 function showError(mesagge) {
   document.querySelector("#pop-mesagge p")
     .innerHTML = mesagge;
+    document.querySelector("#pop-mesagge").classList.remove("hidden");
 }
 function isEmpty(t) {
   if(!t.value) throw new Error("Está vacío el campo de texto.");
