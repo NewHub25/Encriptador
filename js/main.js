@@ -19,7 +19,12 @@ const encryptKeys = [
   ["u", "ufat"],
 ];
 function encrypt() {
-  const input = getTextarea(this).value;
+  const textarea = getTextarea(this);
+  if(!textarea.value) {
+    showError("El campo de texto está vacío 🤨");
+    return;
+  }
+  const input = textarea.value;
   document.getElementById("output").value = input.replace(
     RegExp(encryptKeys.map((m) => m[0]).join("|"), "g"),
     function (match, offset, string) {
@@ -30,7 +35,8 @@ function encrypt() {
   setTypeAnimation(true);
 }
 function decrypt() {
-  const input = getTextarea(this).value;
+  const textarea = getTextarea(this);
+  const input = textarea.value;
   document.getElementById("output").value = input.replace(
     RegExp(encryptKeys.map((m) => m[1]).join("|"), "g"),
     function (match, offset, string) {
@@ -98,3 +104,10 @@ document
   .addEventListener("click", (e) => {
     e.target.parentElement.classList.add("animate__animated", "animate__hinge");
   });
+function showError(mesagge) {
+  document.querySelector("#pop-mesagge p")
+    .innerHTML = mesagge;
+}
+function isEmpty(t) {
+  if(!t.value) throw new Error("Está vacío el campo de texto.");
+}
