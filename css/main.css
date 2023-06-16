@@ -118,6 +118,9 @@ button {
   font-size: 1.2rem;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
 }
+button[data-paste="false"] {
+  display: none;
+}
 textarea {
   opacity: 0.5;
   position: relative;

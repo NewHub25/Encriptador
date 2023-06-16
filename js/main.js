@@ -18,16 +18,22 @@ const encryptKeys = [
   ["o", "ober"],
   ["u", "ufat"],
 ];
+const errorMesagge_empty =
+  "El campo de texto está vacío 🤨, lo siento 😔. Debe ingresar algún texto.";
+const errorMesagge_validCHar =
+  'Error 😮, los caracteres válidos son letras de "a" a la "z" y minúsculas 😬.';
+if (!navigator.clipboard.readText) {
+  document.querySelector("button[data-paste]").dataset.paste = false;
+}
+
 function encrypt() {
   const textarea = getTextarea(this);
   if (!textarea.value) {
-    showError(
-      "El campo de texto está vacío 🤨, lo siento 😔. Debe ingresar algún texto."
-    );
+    showError(errorMesagge_empty);
     return;
   }
-  if (/[A-Z]/g.test(textarea.value)) {
-    showError("Debe estar en minúscula el texto ingresado 😮.");
+  if (/[A-ZÑ]/g.test(textarea.value)) {
+    showError(errorMesagge_validCHar);
     return;
   }
   const input = textarea.value;
@@ -42,13 +48,11 @@ function encrypt() {
 function decrypt() {
   const textarea = getTextarea(this);
   if (!textarea.value) {
-    showError(
-      "El campo de texto está vacío 🤨, lo siento 😔. Debe ingresar algún texto."
-    );
+    showError(errorMesagge_empty);
     return;
   }
-  if (/[A-Z]/g.test(textarea.value)) {
-    showError("Debe estar en minúscula el texto ingresado 😮.");
+  if (/[A-ZÑ]/g.test(textarea.value)) {
+    showError(errorMesagge_validCHar);
     return;
   }
   const input = textarea.value;
@@ -66,13 +70,11 @@ function getTextarea(enviroment) {
 function copyText() {
   const textarea = getTextarea(this);
   if (!textarea.value) {
-    showError(
-      "El campo de texto está vacío 🤨, lo siento 😔. Debe ingresar algún texto."
-    );
+    showError(errorMesagge_empty);
     return;
   }
-  if (/[A-Z]/g.test(textarea.value)) {
-    showError("Debe estar en minúscula el texto ingresado 😮.");
+  if (/[A-ZÑ]/g.test(textarea.value)) {
+    showError(errorMesagge_validCHar);
     return;
   }
   navigator.clipboard
@@ -147,18 +149,3 @@ function showError(mesagge) {
   document.querySelector("#pop-mesagge").classList.remove("animate__hinge");
   document.querySelector("#pop-mesagge").classList.add("animate__backInLeft");
 }
-// Imprimir en consola con estilos
-const objConsole = {
-  text: "Está hecho",
-  color: "#0090de",
-  fontSize: "2em",
-  fontStyle: "italic",
-  fontFamily: '"Times New Roman"',
-  style: "",
-  view: function () {
-    console.log(`%c${this.text}`, this.style);
-  },
-  fixStyle: function () {
-    this.style = `color: ${this.color}; font-size: ${this.fontSize}; font-style: ${this.fontStyle}; font-family: "${this.fontFamily}"`;
-  },
-};

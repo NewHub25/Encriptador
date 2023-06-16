@@ -6,13 +6,13 @@ const options_1 = {
   strings: [
     "Inicia el decifrado. Escribe el código secreto y descubre el significado. También puedes codificarlo y crear tu propia versión cifrada.",
   ].map((item) => `<span>${item}</span>`),
-  typeSpeed: 75,
+  typeSpeed: 30,
   startDelay: 300,
   backSpeed: 75,
   shuffle: false, //Alterar el orden en que se escriben las palabras
   backDelay: 1500,
   loop: true, //Repetir el array de strings
-  loopCount: false, //false = infinite
+  loopCount: 1, //false = infinite
   showCursor: true, //Mostrar cursor palpitante
   cursorChar: "|",
   contentType: "html", //html o null para texto sin formato
