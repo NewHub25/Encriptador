@@ -3,7 +3,12 @@
   width: 100%;
   height: calc(5vh + 2rem);
   bottom: 0;
-  background: #333;
+  background-image: linear-gradient(
+    to top,
+    var(--color60),
+    var(--textButton),
+    transparent 40%
+  );
 }
 .footer_ul {
   margin: 0 auto;
