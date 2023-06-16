@@ -15,7 +15,7 @@
   animation-fill-mode: forwards;
   transform-origin: left;
 }
-#pop-mesagge img {
+#pop-mesagge img.alarma {
   flex: 0 0 auto;
   height: 100%;
   animation-name: wobble;
@@ -26,14 +26,16 @@
 #pop-mesagge p {
   flex: 1 1 auto;
   color: #eee;
-  text-align: center;
+  text-align: left;
   box-sizing: border-box;
   padding: .5rem 2rem;
   font-size: 1.9vh;
 }
-#pop-mesagge i[class*="xmark"] {
+#pop-mesagge img.close {
+  height: 3.5vh;
   position: absolute;
-  right: 0.5rem;
+  right: 0.3rem;
   top: 0.5rem;
   color: #eee;
+  filter: brightness(0) invert(1);
 }

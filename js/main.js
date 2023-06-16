@@ -79,6 +79,10 @@ function copyText() {
     .writeText(textarea.value)
     .then(() => {
       console.log("Texto copiado al portapapeles");
+      this.innerHTML = "✅ Copiado";
+      setTimeout(() => {
+        this.innerHTML = "Copiar";
+      }, 1000);
     })
     .catch((err) => {
       console.error("Error al copiar el texto: ", err);
@@ -128,7 +132,7 @@ addEventListener("keydown", (e) => {
 });
 
 document
-  .querySelector('#pop-mesagge i[class*="xmark"]')
+  .querySelector('#pop-mesagge img.close')
   .addEventListener("click", (e) => {
     e.target.parentElement.classList.remove("animate__backInLeft");
     e.target.parentElement.classList.add("animate__hinge");
@@ -144,16 +148,16 @@ function showError(mesagge) {
 }
 // Imprimir en consola con estilos
 const objConsole = {
-  text: 'Está hecho',
-  color: '#0090de',
-  fontSize:'2em',
-  fontStyle: 'italic',
+  text: "Está hecho",
+  color: "#0090de",
+  fontSize: "2em",
+  fontStyle: "italic",
   fontFamily: '"Times New Roman"',
-  style: '',
-  view: function() {
-      console.log(`%c${this.text}`, this.style);
+  style: "",
+  view: function () {
+    console.log(`%c${this.text}`, this.style);
   },
-  fixStyle: function() {
-      this.style = `color: ${this.color}; font-size: ${this.fontSize}; font-style: ${this.fontStyle}; font-family: "${this.fontFamily}"`
-  }
+  fixStyle: function () {
+    this.style = `color: ${this.color}; font-size: ${this.fontSize}; font-style: ${this.fontStyle}; font-family: "${this.fontFamily}"`;
+  },
 };
