@@ -95,10 +95,11 @@ function closeModal(boolean) {
 }
 function pasteToTextarea() {
   const textarea = getTextarea(this);
+  let temporalValue = textarea.value;
   navigator.clipboard
     .readText()
     .then(function (text) {
-      textarea.value = text;
+      textarea.value = temporalValue + text;
     })
     .catch(function (error) {
       console.error("Error al leer el portapapeles: ", error);
@@ -132,7 +133,7 @@ addEventListener("keydown", (e) => {
 });
 
 document
-  .querySelector('#pop-mesagge img.close')
+  .querySelector("#pop-mesagge img.close")
   .addEventListener("click", (e) => {
     e.target.parentElement.classList.remove("animate__backInLeft");
     e.target.parentElement.classList.add("animate__hinge");

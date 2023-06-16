@@ -48,6 +48,8 @@ body {
   min-width: 70dvw;
   display: flex;
   justify-content: center;
+  /* Se pondrá el footer en pocision absoluta */
+  margin-bottom: 5vh;
 }
 .principal-article:nth-child(1) {
   width: 40%;
@@ -93,7 +95,7 @@ body {
   align-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  gap: 0.5rem;
+  gap: 1vh;
 }
 .principal-article .principal-article-buttons button {
   width: 125px;
