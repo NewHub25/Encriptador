@@ -142,3 +142,18 @@ function showError(mesagge) {
   document.querySelector("#pop-mesagge").classList.remove("animate__hinge");
   document.querySelector("#pop-mesagge").classList.add("animate__backInLeft");
 }
+// Imprimir en consola con estilos
+const objConsole = {
+  text: 'Está hecho',
+  color: '#0090de',
+  fontSize:'2em',
+  fontStyle: 'italic',
+  fontFamily: '"Times New Roman"',
+  style: '',
+  view: function() {
+      console.log(`%c${this.text}`, this.style);
+  },
+  fixStyle: function() {
+      this.style = `color: ${this.color}; font-size: ${this.fontSize}; font-style: ${this.fontStyle}; font-family: "${this.fontFamily}"`
+  }
+};
