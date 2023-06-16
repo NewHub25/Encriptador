@@ -1,17 +1,16 @@
+#pop-mesagge.hidden {
+  display: none;
+}
 #pop-mesagge {
   height: 8vh;
   aspect-ratio: 10/2;
-  background: #333a;
+  background: #333c;
   position: absolute;
   bottom: 2vh;
   left: 5vw;
   z-index: 100;
   border-radius: 1rem;
-  box-sizing: border-box;
-  padding: 0.5rem;
   display: flex;
-  /* display: none; */
-  /* animation-name: hinge; */
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transform-origin: left;
@@ -22,11 +21,15 @@
   animation-name: wobble;
   animation-duration: 0.5s;
   animation-iteration-count: 3;
+  animation-delay: 1.5s;
 }
 #pop-mesagge p {
   flex: 1 1 auto;
   color: #eee;
   text-align: center;
+  box-sizing: border-box;
+  padding: .5rem 2rem;
+  font-size: 1.9vh;
 }
 #pop-mesagge i[class*="xmark"] {
   position: absolute;

@@ -1,5 +1,8 @@
 @import url(./background-modal.css);
 
+.container-modal.hidden {
+  display: none;
+}
 .container-modal {
   position: absolute;
   left: 0;

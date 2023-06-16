@@ -9,11 +9,10 @@ function memo(ar = []) {
 }
 const duration_animation_by_steps = 5;
 const animated__list = [
-  "animate__fadeInRightBig",
-  "animate__fadeInUp",
-  "animate__lightSpeedInRight",
-  "animate__rotateInUpRight",
-  "animate__rollIn",
+  "animate__backInDown",
+  "animate__bounceInDown",
+  "animate__fadeInDown",
+  "animate__zoomIn",
 ];
 const readEachItemBySteps = memo(animated__list);
 const toggleClassAnimation = () => {

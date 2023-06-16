@@ -20,8 +20,14 @@ const encryptKeys = [
 ];
 function encrypt() {
   const textarea = getTextarea(this);
-  if(!textarea.value) {
-    showError("El campo de texto está vacío 🤨");
+  if (!textarea.value) {
+    showError(
+      "El campo de texto está vacío 🤨, lo siento 😔. Debe ingresar algún texto."
+    );
+    return;
+  }
+  if (/[A-Z]/g.test(textarea.value)) {
+    showError("Debe estar en minúscula el texto ingresado 😮.");
     return;
   }
   const input = textarea.value;
@@ -32,10 +38,19 @@ function encrypt() {
     }
   );
   closeModal();
-  setTypeAnimation(true);
 }
 function decrypt() {
   const textarea = getTextarea(this);
+  if (!textarea.value) {
+    showError(
+      "El campo de texto está vacío 🤨, lo siento 😔. Debe ingresar algún texto."
+    );
+    return;
+  }
+  if (/[A-Z]/g.test(textarea.value)) {
+    showError("Debe estar en minúscula el texto ingresado 😮.");
+    return;
+  }
   const input = textarea.value;
   document.getElementById("output").value = input.replace(
     RegExp(encryptKeys.map((m) => m[1]).join("|"), "g"),
@@ -44,13 +59,22 @@ function decrypt() {
     }
   );
   closeModal();
-  setTypeAnimation(false);
 }
 function getTextarea(enviroment) {
   return enviroment.parentElement.closest("article").querySelector("textarea");
 }
 function copyText() {
   const textarea = getTextarea(this);
+  if (!textarea.value) {
+    showError(
+      "El campo de texto está vacío 🤨, lo siento 😔. Debe ingresar algún texto."
+    );
+    return;
+  }
+  if (/[A-Z]/g.test(textarea.value)) {
+    showError("Debe estar en minúscula el texto ingresado 😮.");
+    return;
+  }
   navigator.clipboard
     .writeText(textarea.value)
     .then(() => {
@@ -78,6 +102,10 @@ function pasteToTextarea() {
 }
 function deleteTextarea() {
   const textarea = getTextarea(this);
+  if (!textarea.value) {
+    showError("Ya está vacío 😁.");
+    return;
+  }
   textarea.value = "";
 }
 document.querySelector("[data-close]").addEventListener("click", closeModal);
@@ -102,16 +130,15 @@ addEventListener("keydown", (e) => {
 document
   .querySelector('#pop-mesagge i[class*="xmark"]')
   .addEventListener("click", (e) => {
-    e.target.parentElement.classList.add("animate__animated", "animate__hinge");
-    setTimeout(()=>{
+    e.target.parentElement.classList.remove("animate__backInLeft");
+    e.target.parentElement.classList.add("animate__hinge");
+    setTimeout(() => {
       e.target.parentElement.classList.add("hidden");
     }, 1000);
   });
 function showError(mesagge) {
-  document.querySelector("#pop-mesagge p")
-    .innerHTML = mesagge;
-    document.querySelector("#pop-mesagge").classList.remove("hidden");
-}
-function isEmpty(t) {
-  if(!t.value) throw new Error("Está vacío el campo de texto.");
+  document.querySelector("#pop-mesagge p").innerHTML = mesagge;
+  document.querySelector("#pop-mesagge").classList.remove("hidden");
+  document.querySelector("#pop-mesagge").classList.remove("animate__hinge");
+  document.querySelector("#pop-mesagge").classList.add("animate__backInLeft");
 }
