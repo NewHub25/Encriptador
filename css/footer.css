@@ -6,8 +6,8 @@
   background-image: linear-gradient(
     to top,
     var(--color60),
-    var(--textButton) 10%,
-    #333 40%,
+    var(--textButton) 25%,
+    #333 35%,
     #333a 90%
   );
 }

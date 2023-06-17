@@ -6,7 +6,7 @@ const svg_to_modal = `
 <clipPath id="cache">
   <use xlink:href="#masque" style="overflow: visible" />
 </clipPath>
-<g id="light-blue">
+<g id="green">
   <line x1="630.8" y1="894.3" x2="476.3" y2="1048.8" />
   <line x1="858.2" y1="823.9" x2="1012.7" y2="669.4" />
   <line x1="1066.9" y1="458.2" x2="912.4" y2="612.7" />

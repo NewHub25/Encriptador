@@ -11,21 +11,18 @@
   animation-direction: alternate;
   fill: none;
 }
+#green {
+  stroke: #06A215;
+  stroke-width: 2%;
+}
 #red {
   stroke: #ce1b5f;
   stroke-width: 2%;
 }
-
 #blue {
   stroke: #06a1c4;
   stroke-width: 2%;
 }
-
-#light-blue {
-  stroke: #06a1c4;
-  stroke-width: 2%;
-}
-
 @keyframes show {
   from {
     opacity: 0.15;
